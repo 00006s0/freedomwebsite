@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Software Foundation Resources</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+        header img {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 100px;
+        }
+        nav {
+            background-color: #eee;
+            text-align: center;
+            padding: 10px 0;
+            border-top: 2px solid #000;
+            border-bottom: 2px solid #000;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover, nav a.active {
+            background-color: #ccc;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .button {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #333;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    links.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Free Software Foundation Resources</h1>
+        <img src="gnu.png" alt="GNU Icon">
+        <button class="button" onclick="window.print()">Print as PDF</button>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#distros">Distributions</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#thinkpads">ThinkPads</a>
+        <a href="#tools">Daily Tools</a>
+        <a href="#alternatives">Alternatives</a>
+        <a href="#forums">Forums</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <main>
+        <section id="about">
+            <h2>About Free Software Foundation</h2>
+            <p>The Free Software Foundation (FSF) is a nonprofit organization with a worldwide mission to promote computer user freedom and to defend the rights of all free software users.</p>
+        </section>
+        <section id="projects">
+            <h2>Our Projects</h2>
+            <ul>
+                <li>GNU Project</li>
+                <li>Defective by Design</li>
+                <li>Free Software Directory</li>
+                <li>Replicant (free Android distribution)</li>
+                <li>GNU Guix (package management and more)</li>
+            </ul>
+        </section>
+        <section id="distros">
+            <h2>GNU/Linux Distributions</h2>
+            <p>Here are some fully free GNU/Linux distributions recommended by the FSF:</p>
+            <ul>
+                <li><a href="https://www.gnu.org/distros/free-distros.html">List of Free GNU/Linux Distributions</a></li>
+                <li><a href="https://trisquel.info/">Trisquel</a></li>
+                <li><a href="https://www.parabola.nu/">Parabola GNU/Linux-libre</a></li>
+                <li><a href="https://www.pureos.net/">PureOS</a></li>
+            </ul>
+        </section>
+        <section id="privacy">
+            <h2>Privacy Tips and Resources</h2>
+            <p>Protecting your privacy is crucial. Here are some tools and tips:</p>
+            <ul>
+                <li><a href="https://www.torproject.org/">Tor Browser</a> - For anonymous browsing.</li>
+                <li><a href="https://www.privacytools.io/">PrivacyTools.io</a> - Recommendations for privacy-focused software.</li>
+                <li><a href="https://www.signal.org/">Signal</a> - Secure messaging app.</li>
+                <li><a href="https://www.cryptoparty.in/">CryptoParty</a> - Community events for learning about cryptography and privacy.</li>
+            </ul>
+        </section>
+        <section id="thinkpads">
+            <h2>ThinkPads for Libreboot</h2>
+            <p>These ThinkPads are popular choices for installing Libreboot:</p>
+            <ul>
+                <li>Lenovo ThinkPad X200</li>
+                <li>Lenovo ThinkPad X220</li>
+                <li>Lenovo ThinkPad T400</li>
+                <li>Lenovo ThinkPad T420</li>
+            </ul>
+            <p>Learn more about Libreboot-compatible hardware <a href="https://libreboot.org/docs/hardware/">here</a>.</p>
+        </section>
+        <section id="tools">
+            <h2>Daily Tools</h2>
+            <ul>
+                <li><a href="https://www.libreoffice.org/">LibreOffice</a> - Free and powerful office suite.</li>
+                <li><a href="https://librewolf.net/">LibreWolf</a> - Privacy-focused fork of Firefox.</li>
+                <li><a href="https://www.gimp.org/">GIMP</a> - Free alternative to Photoshop for image editing.</li>
+                <li><a href="https://www.videolan.org/vlc/">VLC Media Player</a> - Versatile media player.</li>
+                <li><a href="https://kdenlive.org/">Kdenlive</a> - Free video editing software.</li>
+                <li><a href="https://calibre-ebook.com/">Calibre</a> - E-book management and conversion tool.</li>
+                <li><a href="https://www.inkscape.org/">Inkscape</a> - Vector graphic design tool.</li>
+            </ul>
+        </section>
+        <section id="alternatives">
+            <h2>Proprietary Alternatives</h2>
+            <p>Looking for alternatives to popular proprietary software? Here are some suggestions:</p>
+            <ul>
+                <li>YouTube: <a href="https://invidious.io/">Invidious</a>, <a href="https://viewtube.io/">ViewTube</a></li>
+                <li>Reddit: <a href="https://libredd.it/">Libreddit</a></li>
+                <li>Spotify: <a href="https://www.deezer.com/">Deezer</a></li>
+                <li>Windows: <a href="https://www.linuxmint.com/">Linux Mint</a>, <a href="https://ubuntu.com/">Ubuntu</a></li>
+                <li>Microsoft Office: <a href="https://www.libreoffice.org/">LibreOffice</a></li>
+                <li>Photoshop: <a href="https://www.gimp.org/">GIMP</a></li>
+            </ul>
+        </section>
+        <section id="forums">
+            <h2>Forums and Communities</h2>
+            <p>Learn more about technology and connect with like-minded individuals through these forums:</p>
+            <ul>
+                <li><a href="https://news.ycombinator.com/">Hacker News</a></li>
+                <li><a href="https://www.reddit.com/r/linux/">r/linux on Reddit</a></li>
+                <li><a href="https://forums.freebsd.org/">FreeBSD Forums</a></li>
+                <li><a href="https://www.linuxquestions.org/">LinuxQuestions.org</a></li>
+                <li><a href="https://ubuntuforums.org/">Ubuntu Forums</a></li>
+            </ul>
+        </section>
+        <section id="resources">
+            <h2>Resources</h2>
+            <p>Visit our <a href="https://www.fsf.org/resources/">resources page</a> for more information on free software, licenses, and how you can contribute.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feel free to reach out to us at <a href="mailto:info@fsf.org">info@fsf.org</a>.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Free Software Foundation</p>
+    </footer>
+</body>
+</html>
+
