@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner's Guide to Free Software</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            position: relative;
+            border-bottom: 2px solid #fff;
+        }
+        header img {
+            width: 150px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5em;
+            text-align: center;
+            border-bottom: 2px solid #fff;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1em;
+            padding: 0.5em;
+            font-weight: bold;
+        }
+        nav a:hover, nav a.active {
+            background-color: #666;
+        }
+        main {
+            padding: 2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            border-top: 2px solid #fff;
+        }
+        .button {
+            background-color: #000;
+            color: #fff;
+            padding: 5px 10px;
+            border: 1px solid #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #333;
+        }
+        section {
+            display: none;
+        }
+        section.active {
+            display: block;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('main section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all sections
+                    sections.forEach(section => section.classList.remove('active'));
+                    
+                    // Add active class to the clicked section
+                    const target = document.querySelector(this.getAttribute('href'));
+                    target.classList.add('active');
+
+                    // Remove active class from all nav links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to the clicked nav link
+                    this.classList.add('active');
+                    
+                    // Smooth scroll to the section
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Set default section
+            document.querySelector('main section').classList.add('active');
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Beginner's Guide to Free Software</h1>
+        <img src="gnu.png" alt="GNU Icon">
+        <a href="#" class="button" onclick="window.print()">Print as PDF</a>
+    </header>
+    <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#distros">Distributions</a>
+        <a href="#tools">Daily Tools</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#forums">Forums</a>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>Welcome to the Beginner's Guide to Free Software</h2>
+            <p>This website helps you get started with free software and GNU/Linux distributions.</p>
+        </section>
+        <section id="about">
+            <h2>About Free Software Foundation</h2>
+            <p>The Free Software Foundation (FSF) is a nonprofit organization that promotes computer user freedom and defends the rights of all free software users.</p>
+            <p>Our mission is to advocate for free software and ensure that all computer users have the freedom to control their own computing.</p>
+        </section>
+        <section id="distros">
+            <h2>GNU/Linux Distributions</h2>
+            <p>Here are some fully free GNU/Linux distributions recommended by the FSF:</p>
+            <ul>
+                <li><a href="https://www.gnu.org/distros/free-distros.html">List of Free GNU/Linux Distributions</a></li>
+                <li><a href="https://trisquel.info/">Trisquel</a></li>
+                <li><a href="https://www.parabola.nu/">Parabola GNU/Linux-libre</a></li>
+                <li><a href="https://www.pureos.net/">PureOS</a></li>
+            </ul>
+        </section>
+        <section id="tools">
+            <h2>Essential Free Software Tools</h2>
+            <ul>
+                <li><a href="https://www.libreoffice.org/">LibreOffice</a> - A free office suite.</li>
+                <li><a href="https://librewolf.net/">LibreWolf</a> - Privacy-focused fork of Firefox.</li>
+                <li><a href="https://www.gimp.org/">GIMP</a> - Free image editing software.</li>
+                <li><a href="https://www.videolan.org/vlc/">VLC Media Player</a> - Versatile media player.</li>
+                <li><a href="https://kdenlive.org/">Kdenlive</a> - Free video editing software.</li>
+                <li><a href="https://calibre-ebook.com/">Calibre</a> - E-book management tool.</li>
+                <li><a href="https://www.inkscape.org/">Inkscape</a> - Vector graphic design tool.</li>
+            </ul>
+        </section>
+        <section id="privacy">
+            <h2>Protect Your Privacy</h2>
+            <p>Consider these methods to enhance your privacy:</p>
+            <ul>
+                <li>Use privacy-focused browsers like <a href="https://librewolf.net/">LibreWolf</a>.</li>
+                <li>Consider using encrypted messaging apps like <a href="https://signal.org/">Signal</a>.</li>
+                <li>Use VPNs to mask your IP address and location.</li>
+                <li>Make purchases with cash or cryptocurrencies like <a href="https://monero.com/">Monero</a> to maintain anonymity.</li>
+                <li>Use torrenting tools responsibly and legally.</li>
+            </ul>
+        </section>
+        <section id="forums">
+            <h2>Engage with the Community</h2>
+            <p>Join these forums to discuss and learn more about technology:</p>
+            <ul>
+                <li><a href="https://news.ycombinator.com/">Hacker News</a> - Technology and startup news.</li>
+                <li><a href="https://libreddit.com/">Libreddit</a> - Privacy-focused alternative to Reddit.</li>
+                <li><a href="https://www.linuxquestions.org/">LinuxQuestions.org</a> - Help and discussion on Linux.</li>
+                <li><a href="https://ubuntuforums.org/">Ubuntu Forums</a> - Ubuntu-specific discussions.</li>
+                <li><a href="https://forums.freebsd.org/">FreeBSD Forums</a> - FreeBSD-specific discussions.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Free Software Foundation</p>
+    </footer>
+</body>
+</html>
